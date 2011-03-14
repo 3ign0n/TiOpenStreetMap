@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+  android:layout_width="wrap_content"
+  android:layout_height="wrap_content">
+  
+  <LinearLayout
+	  android:layout_width="wrap_content"
+	  android:layout_height="wrap_content"
+	  android:layout_marginTop="2dip"
+	  android:layout_marginLeft="5dip"
+	  android:orientation="vertical">
+	<ImageView
+		android:id="@+id/track_icon"
+		android:layout_width="30sp"
+		android:layout_height="40sp">
+	</ImageView>
+	<TextView
+		android:id="@+id/track_source"
+		android:layout_width="wrap_content"
+		android:layout_height="wrap_content"
+		android:textSize="11sp">
+	</TextView>
+  </LinearLayout>
+  
+  <LinearLayout
+	  android:layout_width="wrap_content"
+	  android:layout_height="wrap_content"
+	  android:orientation="vertical"
+	  android:layout_marginLeft="8dip">
+	<TextView
+		android:id="@+id/track_name"
+		android:hint="@string/new_track"
+		android:layout_width="wrap_content"
+		android:layout_height="wrap_content"
+		android:layout_marginTop="2dip"
+		android:textSize="17sp"
+		android:textStyle="bold">
+	</TextView>
+	<TextView
+		android:id="@+id/track_meaure"
+		android:layout_width="wrap_content"
+		android:layout_height="wrap_content"
+		android:layout_marginTop="2dip"
+		android:textColor="#00CC00"
+		android:textSize="14sp">
+	</TextView>
+	<TextView
+		android:id="@+id/desc_text"
+		android:layout_width="wrap_content"
+		android:layout_height="wrap_content"
+		android:layout_marginBottom="2dip"
+		android:layout_marginTop="2dip"
+		android:textColor="#6495ED"
+		android:textSize="14sp">
+	</TextView>
+  </LinearLayout>
+  
+</LinearLayout>

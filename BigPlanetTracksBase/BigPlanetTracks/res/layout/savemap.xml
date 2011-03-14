@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+	android:orientation="vertical" android:layout_width="fill_parent"
+	android:layout_height="fill_parent">
+
+	<SeekBar android:id="@+id/radiusSeekbar" android:gravity="right"
+		android:layout_height="wrap_content" android:layout_width="fill_parent"
+		android:max="10" android:progress="0" />
+
+	<TableLayout xmlns:android="http://schemas.android.com/apk/res/android"
+		android:layout_height="wrap_content" android:layout_width="wrap_content">
+		<TableRow>
+
+			<TextView android:id="@+id/radiusLabel" android:gravity="left"
+				android:layout_height="wrap_content" android:layout_width="fill_parent"
+				android:text="@string/save_map_radius" />
+			
+			<TextView android:id="@+id/downloadInfo" android:gravity="left"
+				android:layout_height="wrap_content" android:layout_width="fill_parent"
+				android:text="@string/save_map_download" />
+
+		</TableRow>
+	</TableLayout>
+
+	<TableLayout xmlns:android="http://schemas.android.com/apk/res/android"
+		android:gravity="center"
+		android:layout_height="wrap_content" android:layout_width="wrap_content">
+		<TableRow >
+		
+			<Button android:id="@+id/startButton" android:layout_width="140dip"
+				android:layout_height="wrap_content" android:text="@string/save_map_button_start_download">
+			</Button>
+			
+			<Button android:id="@+id/cancelButton" android:layout_width="140dip" 
+				android:layout_height="wrap_content" android:text="@string/CANCEL_LABEL">
+			</Button>
+			
+		</TableRow>
+	</TableLayout>
+
+</LinearLayout>

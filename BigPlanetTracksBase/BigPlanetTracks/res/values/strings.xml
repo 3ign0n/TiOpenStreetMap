@@ -1,0 +1,113 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    
+    <string name="try_demo_title">Limitation of demo version</string>
+    <string name="try_demo_message">Sorry, You cannot do it in demo version.</string> 
+    
+    <string name="this_is_demo_title">Demo version</string>
+    <string name="this_is_demo_message">This is demo version, so you must wait 7 seconds before start.</string> 
+    
+    <string name="search_label">Place Name</string>
+    <string name="search_hint">e.g., Taipei</string>
+    
+    <string name="app_name">Big Planet Tracks</string>
+    
+    <string name="EDIT_MENU">Edit</string>
+    <string name="DELETE_MENU">Delete</string>
+    
+    <string name="YES_LABEL">Yes</string>
+    <string name="NO_LABEL">No</string>
+    <string name="OK_LABEL">OK</string>
+    <string name="CANCEL_LABEL">Cancel</string>
+    <string name="website">Web Site</string>
+    
+    <string name="ADD_BUTTON">Add</string>
+    <string name="SAVE_BUTTON">Save</string>
+    
+    <string name="REMOVE_BOOKMARK_TITLE">Remove bookmark</string>
+    <string name="REMOVE_BOOKMARK_MESSAGE">Are you sure?</string>
+    
+    <string name="auto_follow_disabled">Auto-Follow Disabled</string>
+    <string name="auto_follow_enabled">Auto-Follow Enabled</string>
+    <string name="track_enabled">Start tracking</string>
+    <string name="finish_tracking">Finish tracking ?</string>
+    <string name="MY_LOCATION_MENU">My Location</string>
+    <string name="SEARCH_MENU">Search</string>
+    <string name="ABOUT_MENU">About</string>
+    <string name="MAP_SOURCE_MENU">Map source</string>
+    <string name="SQLiteDB_MENU">SQLite Maps</string>
+    <string name="TOOLS_MENU">More</string>
+    <string name="CACHE_MAP_MENU">Save map for offline use</string>
+    <string name="NETWORK_MODE_MENU">Network mode</string>
+    <string name="BOOKMARKS_MENU">Bookmarks</string>
+    <string name="BOOKMARK_ADD_MENU">Add</string>
+    <string name="BOOKMARKS_VIEW_MENU">View</string>
+    <string name="SELECT_OBJECT_MESSAGE">Double click to select object</string>
+    
+    <string name="SELECT_NETWORK_MODE_LABEL">Do you want to use network to download the maps?</string>
+    <string name="OFFLINE_MODE_LABEL">No</string>
+    <string name="ONLINE_MODE_LABEL">Yes</string>
+    
+    <string name="SELECT_MAP_SOURCE_TITLE">Select map</string>
+    <string name="SELECT_SQLite_DATABASE">Select SQLite DB for saving maps</string>
+    <string name="SELECT_SQLite_Folder">The folder %s includes:</string>
+    
+    <string name="GPS_OFFSET_MENU">Adjust map offset</string>
+    <string name="OFFSET_MESSAGE">The moved distances below are just estimated values.</string>
+    <string name="OFFSET_X">Shift map east %s m.</string>
+    <string name="OFFSET_Y">Shift map south %s m.</string>
+    
+    <string name="DOWNLOAD_MESSAGE_PATTERN">{0} tile(s) of {1} downloaded({2}KB), {3} error(s)</string>
+    
+    <string name="REGION_RADIUS_TITLE">Select radius of region</string>
+    
+    <string name="DOWNLOAD_COMPLETE_TITLE">Download complete</string>
+    <string name="ADD_BOOKMARK_TITLE">Add bookmark</string>
+    <string name="UPDATE_BOOKMARK_TITLE">Update bookmark</string>
+    <string name="DOWNLOAD_COMPLETE_MESSAGE">All tiles has been saved</string>
+    
+    <string name="EMPTY_NAME_ERROR">Name cannot be empty</string>
+    
+    <string name="DOWNLOAD_IN_PROGRESS_MESSAGE">Downloading...</string>
+    
+    <string name="DOWNLOAD_PROGRESS_MESSAGE_PATTERN">{0} km, {1} tile(s) / {2} KB</string>
+    
+    <string name="ABOUT_TITLE">Big Planet Tracks</string>
+    <string name="ABOUT_MESSAGE">
+Big Planet Tracks is an online/offline maps application that can import, export and record your GPS tracks, and shows live/real-time statistics such as time, speed, distance, and elevation.\n
+\n
+Big Planet Tracks v2 series\n
+(Enhanced offline maps and GPS tracking tool)\n
+Copyright © 2009-2010 Developer: tytung\n
+Contributors: taiyuchen, dob711\n
+Released under the GPLv3\n
+\n
+Big Planet 1.2.4\n
+(Core offline maps) developed until Jun 19, 2009.\n
+Copyright © 2009 Developer: hudvin\n
+Released under the GPLv2\n
+\n
+All rights reserved.\n
+Please visit \"Dr. TYT \'s Android Map\" for more info.\n{url}
+    </string>
+    <string name="ABOUT_URL">http://android-map.blogspot.com</string>
+    
+    <string name="sdcard_unavailable">Please insert SD card and restart application.</string>
+    <string name="msg_please_wait">Please wait</string>
+    <string name="msg_search_results">Search results</string>
+    <string name="msg_no_search_results">Your search for \"{query}\" did not match any locations.</string>
+    <string name="msg_unable_to_get_current_location">Unable to get current location.</string>
+    <string name="msg_connect_to_server">Connecting to server...</string>
+    <string name="msg_no_connection">No network connection.</string>
+    
+    <string name="save_map_radius">Radius: </string>
+    <string name="save_map_download">Download: </string>
+    <string name="save_map_button_start_download">Start download</string>
+    
+    <string name="bookmark_name">Name</string>
+    <string name="bookmark_description">Description</string>
+    
+    <string name="clearSaveTrackFales">Please stop recording the track first.</string>
+    <string name="notify_recording">Recording your track...</string>
+    
+</resources>

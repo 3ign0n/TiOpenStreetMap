@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+	<string name="TRACK_MENU">轨迹</string>
+	<string name="MANAGE_TRACK_MENU">管理轨迹</string>
+	<string name="BROWSE_TRACK_MENU">浏览轨迹</string>
+	<string name="IMPORT_TRACK_MENU">汇入轨迹 (GPX档案)</string>
+	<string name="CLEAR_LOADED_TRACK_MENU">清除载入轨迹</string>
+	<string name="CLEAR_RECORDED_TRACK_MENU">清除纪录轨迹</string>
+	<string name="CLEAR_ALL_TRACKS_MENU">清除所有轨迹</string>
+	<string name="desc_edit_text">轨迹描述</string>
+	<string name="name_edit_text">轨迹名称</string>
+	
+	<string name="str_export_dialog_title">正在汇出档案</string>
+	<string name="str_export_dialog_body">请稍后片刻...</string>
+	<string name="str_dialog_title">正在汇入轨迹</string>
+	<string name="str_dialog_body">请稍待片刻...</string>
+	<string name="track_importing_result">汇入结果</string>
+	<string name="track_importing_successfully">成功!</string>
+	<string name="import_no_items">目前尚无侦测到任何以GPX格式存在之轨迹档案!\n请将档案放置在SD卡\"BigPlanetTracks/import\"目录下,谢谢。</string>
+	<string name="browse_no_items">目前尚无任何汇入之轨迹。</string>
+	<string name="some_error">部分档案内容有错误:</string>
+	<string name="OK">确定</string>
+	<string name="some_successful">部分成功</string>
+	<string name="select_all">选择全部</string>
+	<string name="import_track">汇入轨迹</string>
+	<string name="cancel">取消</string>
+	<string name="have_yet_select_track_message">您尚未选取任何轨迹!</string>
+	<string name="save_successfully">储存成功</string>
+	<string name="save_fail">储存失败</string>
+	
+	<string name="track_menu_title">轨迹</string>
+	<string-array name="items_track_what_to_do_dialog">
+		<item>显示轨迹于地图</item>
+		<item>编辑轨迹</item>
+		<item>删除轨迹</item>
+		<item>检视轨迹统计资料</item>
+		<item>储存轨迹于SD卡</item>
+	</string-array>
+	
+	<string name="go_to_track_fail">记录轨迹时无法使用此功能。</string>
+	<string name="sure_to_delete_track">您确定要删除此轨迹?</string>
+	<string name="no_stored_tracks">没有任何储存的轨迹</string>
+	<string name="fail">储存失败</string>
+	<string name="str_store_gps_location_to_db_title">正在储存GPS轨迹</string>
+	<string name="str_store_gps_location_to_db_body">请稍候片刻</string>
+	<string name="gps_locationlist_has_no_data">目前无任何GPS座标可储存,\n请确定能接收GPS讯号。</string>
+	<string name="delete_track_successfully">删除轨迹成功</string>
+	<string name="delete_track_fail">删除轨迹失败</string>
+	<string name="edit_track_dialog_tile">编辑轨迹</string>
+	<string name="edit_successfully">编辑成功</string>
+	<string name="drawing_track_progressdialog_title">正在描绘轨迹</string>
+	<string name="drawing_track_progressdialog_body">请稍候片刻...</string>
+	<string name="source_text">来源</string>
+	<string name="track_source_string_file">来源:档案</string>
+	<string name="track_source_string_gps">来源:GPS</string>
+	<string name="import_fail">汇入失败</string>
+	<string name="new_track">新轨迹</string>
+	<string name="track_name_string">名称</string>
+	<string name="track_waypoints_string">标记点</string>
+	<string name="track_start_time_string">开始时间</string>
+	<string name="track_description_string">描述</string>
+	<string name="whole_track_information_dialog_title">轨迹资讯</string>
+	<string name="speed_unit">公里/小时</string>
+	
+	<!-- Stats Labels -->
+	<string name="total_time_label">全部时间</string>
+	<string name="speed">速度</string>
+	<string name="total_distance_label">全部距离</string>
+	<string name="unknown">-</string>
+	<string name="max_speed_label">最高速度</string>
+	<string name="average_speed_label">平均速度</string>
+	<string name="elevation_gain_label">海拔增益</string>
+	<string name="elevation_label">海拔</string>
+	<string name="latitude_label">纬度</string>
+	<string name="longitude_label">经度</string>
+	<string name="min_elevation_label">最低海拔</string>
+	<string name="max_elevation_label">最高海拔</string>
+	<string name="kilometer">公里</string>
+	<string name="meter">公尺</string>
+	<string name="hr">小时</string>
+</resources>

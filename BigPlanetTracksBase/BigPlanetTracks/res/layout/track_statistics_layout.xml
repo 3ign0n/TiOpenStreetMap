@@ -1,0 +1,211 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+	android:id="@+id/statisticsView"
+	android:layout_width="fill_parent"
+	android:layout_height="fill_parent"> 
+<LinearLayout
+	android:layout_width="fill_parent"
+	android:layout_height="fill_parent"
+	android:orientation="vertical"
+	android:background="#8DB6CD">
+	
+	<TextView
+		android:id="@+id/track_name_view" 
+		android:text="@string/track_name_string" 
+		android:layout_width="wrap_content" 
+		android:layout_height="wrap_content"
+		android:textColor="#FFFFFF"/>
+	<TextView
+		android:layout_marginTop="5dip" 
+		android:id="@+id/track_name_content_view" 
+		android:layout_width="fill_parent" 
+		android:layout_height="wrap_content"
+		android:background="#FFFFFF"
+		android:textColor="#000000"
+		android:cursorVisible="false"
+		android:focusable="false"/>
+	
+	<LinearLayout
+		android:layout_width="wrap_content"
+		android:layout_height="fill_parent"
+		android:orientation="horizontal">
+		<LinearLayout
+			android:layout_width="wrap_content"
+			android:layout_height="fill_parent"
+			android:orientation="vertical">
+			<TextView android:text="@string/total_distance_label"
+				android:id="@+id/track_distance_view" 
+				android:layout_width="wrap_content" 
+				android:layout_height="wrap_content"
+				android:textColor="#FFFFFF"/>
+			<TextView
+				android:layout_marginTop="5dip"
+				android:id="@+id/track_distance_content_view" 
+				android:layout_width="145dip" 
+				android:layout_height="wrap_content"
+				android:background="#FFFFFF"
+				android:textColor="#000000"
+				android:cursorVisible="false"
+				android:focusable="false"/>
+		</LinearLayout>
+		
+		<LinearLayout
+			android:layout_width="wrap_content"
+			android:layout_height="fill_parent"
+			android:orientation="vertical"
+			android:layout_marginLeft="5dip">
+			<TextView android:text="@string/max_speed_label"
+				android:id="@+id/track_maxSpeed__view" 
+				android:layout_width="wrap_content" 
+				android:layout_height="wrap_content"
+				android:textColor="#FFFFFF"/>
+			<TextView
+				android:layout_marginTop="5dip" 
+				android:id="@+id/track_maxSpeed_content_view" 
+				android:layout_width="145dip" 
+				android:layout_height="wrap_content"
+				android:background="#FFFFFF"
+				android:textColor="#000000"
+				android:cursorVisible="false"
+				android:focusable="false"/>
+		</LinearLayout>
+	</LinearLayout>
+	
+	<LinearLayout
+		android:layout_width="wrap_content"
+		android:layout_height="fill_parent"
+		android:orientation="horizontal">
+		<LinearLayout
+			android:layout_width="wrap_content"
+			android:layout_height="fill_parent"
+			android:orientation="vertical">
+			<TextView android:text="@string/total_time_label"
+				android:id="@+id/track_time_view" 
+				android:layout_width="wrap_content" 
+				android:layout_height="wrap_content"
+				android:textColor="#FFFFFF"/>
+			<TextView
+				android:layout_marginTop="5dip" 
+				android:id="@+id/track_time_content_view" 
+				android:layout_width="145dip" 
+				android:layout_height="wrap_content"
+				android:background="#FFFFFF"
+				android:textColor="#000000"
+				android:cursorVisible="false"
+				android:focusable="false"/>
+		</LinearLayout>
+		<LinearLayout
+			android:layout_width="wrap_content"
+			android:layout_height="fill_parent"
+			android:layout_marginLeft="5dip"
+			android:orientation="vertical">
+			<TextView android:text="@string/average_speed_label"
+				android:id="@+id/track_speed_view" 
+				android:layout_width="wrap_content" 
+				android:layout_height="wrap_content"
+				android:textColor="#FFFFFF"/>
+			<TextView
+				android:layout_marginTop="5dip" 
+				android:id="@+id/track_speed_content_view" 
+				android:layout_width="145dip" 
+				android:layout_height="wrap_content"
+				android:background="#FFFFFF"
+				android:textColor="#000000"
+				android:cursorVisible="false"
+				android:focusable="false"/>
+		</LinearLayout>
+	</LinearLayout>
+	
+	<LinearLayout
+		android:layout_width="wrap_content"
+		android:layout_height="fill_parent"
+		android:orientation="horizontal">
+		<LinearLayout
+			android:layout_width="wrap_content"
+			android:layout_height="fill_parent"
+			android:orientation="vertical">
+			<TextView android:text="@string/min_elevation_label"
+				android:id="@+id/track_min_elevation_view" 
+				android:layout_width="wrap_content" 
+				android:layout_height="wrap_content"
+				android:textColor="#FFFFFF"/>
+			<TextView
+				android:layout_marginTop="5dip" 
+				android:id="@+id/track_min_elevation_content_view" 
+				android:layout_width="145dip" 
+				android:layout_height="wrap_content"
+				android:background="#FFFFFF"
+				android:textColor="#000000"
+				android:cursorVisible="false"
+				android:focusable="false"/>
+		</LinearLayout>
+		<LinearLayout
+			android:layout_width="wrap_content"
+			android:layout_height="fill_parent"
+			android:layout_marginLeft="5dip"
+			android:orientation="vertical">
+			<TextView android:text="@string/max_elevation_label"
+				android:id="@+id/track_max_elevation_view" 
+				android:layout_width="wrap_content" 
+				android:layout_height="wrap_content"
+				android:textColor="#FFFFFF"/>
+			<TextView
+				android:layout_marginTop="5dip" 
+				android:id="@+id/track_max_elevation_content_view" 
+				android:layout_width="145dip" 
+				android:layout_height="wrap_content"
+				android:background="#FFFFFF"
+				android:textColor="#000000"
+				android:cursorVisible="false"
+				android:focusable="false"/>
+		</LinearLayout>
+	</LinearLayout>
+	
+	<TextView android:text="@string/track_waypoints_string"
+		android:id="@+id/track_waypoints_view" 
+		android:layout_width="wrap_content" 
+		android:layout_height="wrap_content"
+		android:textColor="#FFFFFF"/>
+	<TextView
+		android:layout_marginTop="5dip" 
+		android:id="@+id/track_waypoints_content_view" 
+		android:layout_width="fill_parent" 
+		android:layout_height="wrap_content"
+		android:background="#FFFFFF"
+		android:textColor="#000000"
+		android:cursorVisible="false"
+		android:focusable="false"/>
+	
+	<TextView android:text="@string/track_start_time_string"
+		android:id="@+id/track_start_time_view" 
+		android:layout_width="wrap_content" 
+		android:layout_height="wrap_content"
+		android:textColor="#FFFFFF"/>
+	<TextView
+		android:layout_marginTop="5dip" 
+		android:id="@+id/track_start_time_content_view" 
+		android:layout_width="fill_parent" 
+		android:layout_height="wrap_content"
+		android:background="#FFFFFF"
+		android:textColor="#000000"
+		android:cursorVisible="false"
+		android:focusable="false"
+		android:singleLine="false"/>
+
+	<TextView android:text="@string/track_description_string"
+		android:id="@+id/track_description_view" 
+		android:layout_width="wrap_content" 
+		android:layout_height="wrap_content"
+		android:textColor="#FFFFFF"/>
+	<TextView
+		android:layout_marginTop="5dip" 
+		android:id="@+id/track_description_content_view" 
+		android:layout_width="fill_parent" 
+		android:layout_height="wrap_content"
+		android:background="#FFFFFF"
+		android:textColor="#000000"
+		android:cursorVisible="false"
+		android:focusable="false"
+		android:singleLine="false"/>
+</LinearLayout>
+</ScrollView>

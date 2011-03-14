@@ -1,0 +1,113 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    
+    <string name="try_demo_title">试用版的限制</string>
+    <string name="try_demo_message">抱歉，在试用版中您不能执行此功能。</string> 
+    
+    <string name="this_is_demo_title">试用版</string>
+    <string name="this_is_demo_message">此为试用版，所以您必须等待7秒后才能使用该程式。</string> 
+    
+    <string name="search_label">地点</string>
+    <string name="search_hint">例如，北京</string>
+    
+    <string name="app_name">*星迹地图*</string>
+    
+    <string name="EDIT_MENU">编辑</string>
+    <string name="DELETE_MENU">删除</string>
+    
+    <string name="YES_LABEL">是</string>
+    <string name="NO_LABEL">否</string>
+    <string name="OK_LABEL">确定</string>
+    <string name="CANCEL_LABEL">取消</string>
+    <string name="website">网站</string>
+    
+    <string name="ADD_BUTTON">新增</string>
+    <string name="SAVE_BUTTON">储存</string>
+    
+    <string name="REMOVE_BOOKMARK_TITLE">移除书签</string>
+    <string name="REMOVE_BOOKMARK_MESSAGE">您确定吗?</string>
+    
+    <string name="auto_follow_disabled">解除自动跟随功能</string>
+    <string name="auto_follow_enabled">开启自动跟随功能</string>
+    <string name="track_enabled">开始记录轨迹</string>
+    <string name="finish_tracking">结束记录轨迹 ?</string>
+    <string name="MY_LOCATION_MENU">我的位置</string>
+    <string name="SEARCH_MENU">搜寻</string>
+    <string name="ABOUT_MENU">关于</string>
+    <string name="MAP_SOURCE_MENU">地图种类</string>
+    <string name="SQLiteDB_MENU">SQLite地图</string>
+    <string name="TOOLS_MENU">更多</string>
+    <string name="CACHE_MAP_MENU">储存地图供离线使用</string>
+    <string name="NETWORK_MODE_MENU">网路模式</string>
+    <string name="BOOKMARKS_MENU">书签</string>
+    <string name="BOOKMARK_ADD_MENU">新增</string>
+    <string name="BOOKMARKS_VIEW_MENU">检视</string>
+    <string name="SELECT_OBJECT_MESSAGE">双击地图选择物件</string>
+    
+    <string name="SELECT_NETWORK_MODE_LABEL">您想要使用网路下载地图吗?</string>
+    <string name="OFFLINE_MODE_LABEL">否</string>
+    <string name="ONLINE_MODE_LABEL">是</string>
+    
+    <string name="SELECT_MAP_SOURCE_TITLE">选择地图种类</string>
+    <string name="SELECT_SQLite_DATABASE">选择SQLite地图资料库</string>
+    <string name="SELECT_SQLite_Folder">目录 %s 下包括：</string>
+    
+    <string name="GPS_OFFSET_MENU">修正地图偏移</string>
+    <string name="OFFSET_MESSAGE">底下的地图移动距离仅为估计值。</string>
+    <string name="OFFSET_X">地图东移 %s 公尺。</string>
+    <string name="OFFSET_Y">地图南移 %s 公尺。</string>
+    
+    <string name="DOWNLOAD_MESSAGE_PATTERN">共 {1} 个地图区块档，\n已检查(或下载) {0} 个 ({2}KB)，\n{3} 个错误。</string>
+    
+    <string name="REGION_RADIUS_TITLE">选择区域半径</string>
+    
+    <string name="DOWNLOAD_COMPLETE_TITLE">下载完成</string>
+    <string name="ADD_BOOKMARK_TITLE">新增书签</string>
+    <string name="UPDATE_BOOKMARK_TITLE">修改书签</string>
+    <string name="DOWNLOAD_COMPLETE_MESSAGE">全部地图区块已储存。</string>
+    
+    <string name="EMPTY_NAME_ERROR">名称不能空白。</string>
+    
+    <string name="DOWNLOAD_IN_PROGRESS_MESSAGE">下载中...</string>
+    
+    <string name="DOWNLOAD_PROGRESS_MESSAGE_PATTERN">{0} 公里\n{1} 地图区块档 / {2} KB</string>
+    
+    <string name="ABOUT_TITLE">Big Planet Tracks\n*星迹地图*</string>
+    <string name="ABOUT_MESSAGE">
+*星迹地图* 是一款实用的在线, 离线地图程式, 能汇入, 汇出与记录 GPS 轨迹, 并即时显示时间, 速度, 距离, 海拔等统计数据。\n
+\n
+Big Planet Tracks v2 系列\n
+(加强版离线地图及 GPS 轨迹记录器)\n
+版权所有 © 2009-2010 开发者: tytung\n
+贡献者: taiyuchen, dob711\n
+依据 GPLv3 授权条款释出。\n
+\n
+Big Planet 1.2.4\n
+(基础版离线地图) 2009年6月19日停止开发。\n
+版权所有 © 2009 开发者: hudvin\n
+依据 GPLv2 授权条款释出。\n
+\n
+保留所有的权利。\n
+详情请看网站 \"Dr. TYT 的 Android 地图\"。\n{url}
+    </string>
+    <string name="ABOUT_URL">http://android-map.blogspot.com</string>
+    
+    <string name="sdcard_unavailable">请放入SD卡并重新启动程式。</string>
+    <string name="msg_please_wait">请稍候</string>
+    <string name="msg_search_results">搜寻结果</string>
+    <string name="msg_no_search_results">针对关键字 \"{query}\"，\n查无任何符合的位置。</string>
+    <string name="msg_unable_to_get_current_location">无法取得目前位置。</string>
+    <string name="msg_connect_to_server">伺服器连线中...</string>
+    <string name="msg_no_connection">无网路连线。</string>
+    
+    <string name="save_map_radius">半径: </string>
+    <string name="save_map_download">下载: </string>
+    <string name="save_map_button_start_download">开始下载</string>
+    
+    <string name="bookmark_name">名称</string>
+    <string name="bookmark_description">描述</string>
+    
+    <string name="clearSaveTrackFales">请先停止记录轨迹</string>
+    <string name="notify_recording">正在记录轨迹...</string>
+    
+</resources>

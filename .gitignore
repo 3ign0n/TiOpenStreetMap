@@ -3,3 +3,4 @@
 */build/**/*
 *.zip
 **/.apt_generated
+.hg*

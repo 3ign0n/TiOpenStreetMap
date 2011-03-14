@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+	<string name="TRACK_MENU">Tracks</string>
+	<string name="MANAGE_TRACK_MENU">Manage tracks</string>
+	<string name="BROWSE_TRACK_MENU">Browse Tracks</string>
+	<string name="IMPORT_TRACK_MENU">Import Tracks (GPX File)</string>
+	<string name="CLEAR_LOADED_TRACK_MENU">Clear loaded track</string>
+	<string name="CLEAR_RECORDED_TRACK_MENU">Clear recorded track</string>
+	<string name="CLEAR_ALL_TRACKS_MENU">Clear all tracks</string>
+	<string name="desc_edit_text">Track Description</string>
+	<string name="name_edit_text">Track Name</string>
+	
+	<string name="str_export_dialog_title">Exporting Track</string>
+	<string name="str_export_dialog_body">Please wait for a moment...</string>
+	<string name="str_dialog_title">Importing Tracks</string>
+	<string name="str_dialog_body">Please wait for a moment...</string>
+	<string name="track_importing_result">Importing Result</string>
+	<string name="track_importing_successfully">Success.</string>
+	<string name="import_no_items">There are no GPX format track files existed!\nPlease put those files in the folder of the SD card \"BigPlanetTracks/import\". Thanks a lot!</string>
+	<string name="browse_no_items">There are no imported tracks here!</string>
+	<string name="some_error">Some files get failed:</string>
+	<string name="OK">OK</string>
+	<string name="some_successful">Not all tracks imported successfully!</string>
+	<string name="select_all">Select All</string>
+	<string name="import_track">Import Tracks</string>
+	<string name="cancel">Cancel</string>
+	<string name="have_yet_select_track_message">You have yet selected any tracks!</string>
+	<string name="save_successfully">Save successfully!</string>
+	<string name="save_fail">Fail to save</string>
+	
+	<string name="track_menu_title">This Track</string>
+	<string-array name="items_track_what_to_do_dialog">
+		<item>Go to track</item>
+		<item>Edit track</item>
+		<item>Delete track</item>
+		<item>View track statistics</item>
+		<item>Write to SD card...</item>
+	</string-array>
+	
+	<string name="go_to_track_fail">Cannot go to this track when recording a track.</string>
+	<string name="sure_to_delete_track">Are you sure to delete this track?</string>
+	<string name="no_stored_tracks">No existed tracks</string>
+	<string name="fail">Fail to store!</string>
+	<string name="str_store_gps_location_to_db_title">Storing GPS Track</string>
+	<string name="str_store_gps_location_to_db_body">Please wait...</string>
+	<string name="gps_locationlist_has_no_data">No GPS locations to store.\nPlease make sure to receive GPS successfully.</string>
+	<string name="delete_track_successfully">Delete track successfully</string>
+	<string name="delete_track_fail">Fail to delete track!</string>
+	<string name="edit_track_dialog_tile">Edit Track</string>
+	<string name="edit_successfully">Edit successfully</string>
+	<string name="drawing_track_progressdialog_title">Drawing track</string>
+	<string name="drawing_track_progressdialog_body">Please wait...</string>
+	<string name="source_text">source</string>
+	<string name="track_source_string_file">Source:File</string>
+	<string name="track_source_string_gps">Source:GPS</string>
+	<string name="import_fail">Fail to import files</string>
+	<string name="new_track">New Track</string>
+	<string name="track_name_string">Name</string>
+	<string name="track_waypoints_string">Waypoints</string>
+	<string name="track_start_time_string">Start Time</string>
+	<string name="track_description_string">Description</string>
+	<string name="whole_track_information_dialog_title">Track Information</string>
+	<string name="speed_unit">km/hr</string>
+	
+	<!-- Stats Labels -->
+	<string name="total_time_label">Total Time</string>
+	<string name="speed">Speed</string>
+	<string name="total_distance_label">Total Distance</string>
+	<string name="unknown">-</string>
+	<string name="max_speed_label">Max Speed</string>
+	<string name="average_speed_label">Average Speed</string>
+	<string name="elevation_gain_label">Elevation Gain</string>
+	<string name="elevation_label">Elevation</string>
+	<string name="latitude_label">Latitude</string>
+	<string name="longitude_label">Longitude</string>
+	<string name="min_elevation_label">Min Elevation</string>
+	<string name="max_elevation_label">Max Elevation</string>
+	<string name="kilometer">km</string>
+	<string name="meter">m</string>
+	<string name="hr">hr</string>
+</resources>
