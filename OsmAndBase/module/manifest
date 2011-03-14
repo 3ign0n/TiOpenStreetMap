@@ -1,0 +1,17 @@
+#
+# this is your module manifest and used by Titanium
+# during compilation, packaging, distribution, etc.
+#
+version: 0.1
+description: My module
+author: Your Name
+license: Specify your license
+copyright: Copyright (c) 2010 by Your Company
+
+
+# these should not be edited
+name: osmm
+moduleid: com.appcelerator.osmm
+guid: 4b3339f7-7c55-4258-84bd-49d70783b161
+platform: android
+minsdk: 1.6.0

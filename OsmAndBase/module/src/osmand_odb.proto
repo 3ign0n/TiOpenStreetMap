@@ -1,0 +1,258 @@
+option java_package = "net.osmand.binary";
+//protoc --java_out=../.. osmand_odb.proto
+
+
+//
+//  STORAGE LAYER: Storing primitives.
+//
+
+// IMPORTANT :  These messages are not intented to be parsed by google engine (because of the size)
+ // The main difference that size of that messages is not var int and is always fixed int size
+message OsmAndStructure {
+   required uint32 version = 1;
+   // encoded as fixed32 length delimited
+   repeated OsmAndMapIndex mapIndex = 2;
+   // encoded as fixed32 length delimited  
+   repeated OsmAndAddressIndex addressIndex = 3;
+    // encoded as fixed32 length delimited  
+   repeated OsmAndTransportIndex transportIndex = 4;
+   
+   // last field should version again (to check consistency)
+   required uint32 versionConfirm = 32;
+}
+
+/** 
+  String table, contains the common strings in each block.
+ */
+message StringTable {
+   repeated string s = 1;
+} 
+
+
+message OsmAndMapIndex {
+   // encoded as fixed32 length delimited 
+   repeated MapRootLevel levels = 1;
+   
+   optional string name = 3;
+   
+   repeated MapEncodingRule rules = 8;
+}
+
+message MapEncodingRule {
+	required string tag = 3;
+	optional string value = 5;
+	required uint32 type = 6;
+	required uint32 subtype = 7;
+	
+	optional uint32 minZoom = 9;
+}
+
+message MapRootLevel {
+   required int32 maxZoom = 1;
+   required int32 minZoom = 2;
+   required int32 left = 3; 
+   required int32 right = 4; 
+   required int32 top = 5; 
+   required int32 bottom = 6;
+   
+   // encoded as fixed32 length delimited
+   repeated MapTree root = 7;
+   
+}
+
+message MapTree {
+   required sint32 left = 1; // delta encoded
+   required sint32 right = 2; // delta encoded
+   required sint32 top = 3; // delta encoded
+   required sint32 bottom = 4; // delta encoded
+   
+   // deprecated fields used as base id (should be removed, when all maps be regenerated)
+   // leave for backward compatibility
+   optional StringTable oldstringTable = 5; 
+   optional uint64 oldbaseId = 6;  
+   
+   // encoded as fixed32 length delimited
+   repeated MapTree subtrees = 7;
+   
+   repeated MapData leafs = 8;
+   
+   optional uint64 baseId = 10;
+   optional StringTable stringTable = 11;
+}
+
+
+
+
+/// Simple messages
+message MapData {
+  required bytes coordinates = 1; // array of delta x,y sint32 (CodedIinputStream) >> 5
+  								 // first x delta to Tree.left, y to delta Tree.top (next delta to previous)
+  required bytes types = 2; // array of fixed int16
+  
+  required sint64 id = 3; // delta encoded
+  optional uint32 stringId = 4;
+  
+  optional bytes restrictions = 5; // array of SInt64 delta encoded (to baseId !)
+  optional int32 highwayMeta = 6; 
+}
+
+/// Address messages
+
+message OsmAndAddressIndex {
+	
+	required string name = 1;
+	optional string name_en = 2;
+	
+	// encoded as fixed32 length delimited
+	optional CitiesIndex cities = 5; // cities and towns 
+
+	// encoded as fixed32 length delimited
+	optional PostcodesIndex postcodes = 6;
+	
+	// encoded as fixed32 length delimited
+	optional CitiesIndex villages = 7; // suburbs and villages
+}
+
+message CitiesIndex {
+	// encoded as fixed32 length delimited
+    repeated CityIndex cities = 1;
+}
+
+message PostcodesIndex {
+	// encoded as fixed32 length delimited
+    repeated PostcodeIndex postcodes = 1;
+}
+
+message CityIndex {
+	// should be written the first
+    required uint32 city_type = 1; // 0-5 enum CityType
+    
+	required string name = 2;
+	optional string name_en = 3;
+	optional uint64 id = 4;
+	
+	required fixed32 x = 5; // x tile of 31 zoom
+	required fixed32 y = 6; // y tile of 31 zoom
+	
+	optional InteresectedStreets intersections = 14;
+	
+	repeated StreetIndex streets = 18; 
+}
+
+message InteresectedStreets {
+    repeated StreetIntersection intersections = 5;
+}
+
+message StreetIntersection {
+	required uint32 intersectedStreet1 = 2; // index of street in parent list
+	required uint32 intersectedStreet2 = 3; // index of street in parent list
+	required sint32 intersectedX = 4; // delta encoded to parent x 24 zoom
+	required sint32 intersectedY = 5; // delta encoded to parent y 24 zoom
+}
+
+
+
+message PostcodeIndex {
+    required string postcode = 1;
+    required fixed32 x = 2; // x tile of 31 zoom
+	required fixed32 y = 3; // y tile of 31 zoom
+    repeated StreetIndex streets = 5;
+}
+
+message StreetIndex {
+	required string name = 1;
+	optional string name_en = 2;
+	
+	required sint32 x = 3; // delta encoded to parent 24 zoom
+	required sint32 y = 4; // delta encoded to parent 24 zoom
+	
+	optional uint64 id = 6;
+	
+	
+	repeated BuildingIndex buildings = 18;
+} 
+
+message BuildingIndex {
+	required string name = 1;
+	optional string name_en = 2;
+	optional uint64 id = 5;
+	optional string postcode = 6;
+	
+	required sint32 x = 3; // delta encoded to street 24 zoom
+	required sint32 y = 4; // delta encoded to street 24 zoom
+	
+}
+
+// transport messages
+
+message TransportRoutes {
+   repeated TransportRoute routes = 6; 
+}
+
+message TransportRoute {
+   required uint64 id = 1;
+   
+   optional uint32 type = 3; // reference in string table
+   optional uint32 operator = 4; // reference in string table
+   optional string ref = 5;
+   optional uint32 name = 6; // reference in string table
+   optional uint32 name_en = 7; // reference in string table
+   optional uint32 distance = 8; // distance in meters
+   
+   repeated TransportRouteStop directStops = 15;
+   repeated TransportRouteStop reverseStops = 16; 
+}
+
+message TransportRouteStop {
+   required sint64 id = 1; // delta encoded to previous stop (first stop is delta to 0)
+   required sint32 dx = 2; // delta encoded to previous stop (24 zoom)
+   required sint32 dy = 3; // delta encoded to previous stop (24 zoom)
+   
+   required uint32 name = 6; // index in message table
+   optional uint32 name_en = 7; // index in message table
+}
+
+message TransportStop {
+   required sint32 dx = 1; // delta encoded to parent (24 zoom) to left
+   required sint32 dy = 2; // delta encoded to parent (24 zoom) to top
+
+   required sint64 id = 5; // delta encoded to parent base id 
+   
+   required uint32 name = 6; // index in message table
+   optional uint32 name_en = 7; // index in message table
+   
+   repeated uint32 routes = 16; // -shift to transport route containing that stop 
+   								// TransportStop.Message.start -  sizeof(TransportStop.Message.length) - routes[i] 
+   								//				= TransportRoute.Message.start - sizeof(TransportRoute.Message.length)
+   								// message is started when body is started 
+ 
+}
+
+message TransportStopsTree {
+   required sint32 left = 1; // delta encoded (24 zoom)
+   required sint32 right = 2; // delta encoded (24 zoom)
+   required sint32 top = 3; // delta encoded (24 zoom)
+   required sint32 bottom = 4; // delta encoded (24 zoom)
+   
+   // encoded as fixed32 length delimited
+   repeated TransportStopsTree subtrees = 7;
+   
+   repeated TransportStop leafs = 8;
+   
+   // written as last
+   optional uint64 baseId = 16;
+}
+			
+message OsmAndTransportIndex {
+    optional string name = 1;
+    	
+	// encoded as fixed32 length delimited
+	optional TransportRoutes routes = 3; // routes 
+
+	// encoded as fixed32 length delimited
+	optional TransportStopsTree stops = 6;
+	
+	
+	required StringTable stringTable = 9;
+	
+}

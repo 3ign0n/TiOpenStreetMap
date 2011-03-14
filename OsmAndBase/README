@@ -1,0 +1,22 @@
+Google map is not support offline caching.
+http://wiki.openstreetmap.org/ is reratively popular way to do so.
+
+One of Open Street Map implementation is OsmAnd project(Opensource, GPL )
+http://osmand.net/
+
+How to be porting it as Titanium module
+1. check out source code from git://github.com/osmandapp/Osmand.git
+//2. import DataExtractionOSM dir into eclipse project and export as JAR file
+//3. create Android project from existing source, select OsmAnd dir, and export as JAR file
+2. copy all of *.java files in DataExtractionOSM into titanium modules's src dir, keeping their directory structure
+3. copy all of *.java files in OsmAnd into titanium modules's src dir, keeping their directory structure
+     *1  overwrite DataExtractionOSM/src/net/osmand/LogUtil.java with OSMAnd/src/net/osmand/LogUtil.java
+
+4. edit the file (THIS IS ONLY FOR JAPANESE ENVRONMENT)
+     /Library/Application¥ Support/Titanium/mobilesdk/osx/1.6.1/module/android/build.xml
+     in javac section, add encoding="UTF-8" addribute
+
+5. write bridge code between Titanium and OsmAnd
+6. build the module
+7. copy dist/com.appcelerator.osmm_0.1.zip to Titanium app dir
+
