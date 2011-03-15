@@ -4,3 +4,4 @@
 *.zip
 **/.apt_generated
 .hg*
+.svn*

@@ -1,0 +1,12 @@
+I compare the following Open Street Map implementation
+
+- OsmAnd http://osmand.net/
+- Big Plannet Tracks http://code.google.com/p/big-planet-tracks/
+- MapDroid http://tedp.id.au/mapdroid/
+- RMaps2 http://code.google.com/p/robertprojects/
+
+
+I think RMaps2 is one of the most active project, 
+simple design and small footprint.
+So I choose it as a base project to realize a offline map feature.
+
