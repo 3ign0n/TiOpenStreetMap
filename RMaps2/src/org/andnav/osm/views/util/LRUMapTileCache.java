@@ -29,7 +29,7 @@ public class LRUMapTileCache extends LinkedHashMap<String, SoftReference<Bitmap>
         }
 
         @Override
-        protected boolean removeEldestEntry(Entry<String, SoftReference<Bitmap>> pEldest) {
+        protected boolean removeEldestEntry(java.util.Map.Entry<String, SoftReference<Bitmap>> pEldest) {
                 return size() > mCapacity;
         }
 

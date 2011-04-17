@@ -1,0 +1,17 @@
+#
+# this is your module manifest and used by Titanium
+# during compilation, packaging, distribution, etc.
+#
+version: 0.1
+description: bridge module between RMaps2 and Titanium
+author: TAKEDA hiroyuki
+license: GPLv3
+copyright: Copyright (c) 2011 by appcelerator
+
+
+# these should not be edited
+name: openstreetmap
+moduleid: org.appcelerator.openstreetmap
+guid: 07bbb831-b67c-47e4-ba83-b312d0d72460
+platform: android
+minsdk: 1.7.0

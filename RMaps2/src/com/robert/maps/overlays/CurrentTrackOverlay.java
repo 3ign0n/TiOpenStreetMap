@@ -75,6 +75,29 @@ public class CurrentTrackOverlay extends OpenStreetMapViewOverlay {
 		mIsBound = true;
 	}
 
+	public CurrentTrackOverlay(Context context, PoiManager poiManager, OpenStreetMapView osmv) {
+		mTrack = new Track();
+		mContext = context;
+		//mPoiManager = poiManager;
+		mBaseCoords = new Point();
+		mBaseLocation = new GeoPoint(0, 0);
+		mLastZoom = -1;
+		mBasePj = null;
+
+		mOsmv = osmv;
+		mThread = new TrackThread();
+		mThread.setName("Current Track thread");
+
+
+		mPaint = new Paint();
+		mPaint.setAntiAlias(true);
+		mPaint.setStrokeWidth(4);
+		mPaint.setStyle(Paint.Style.STROKE);
+//		mPaint.setColor(mainMapActivity.getResources().getColor(R.color.currenttrack));
+
+		mContext.bindService(new Intent(IRemoteService.class.getName()), mConnection, 0 /*Context.BIND_AUTO_CREATE*/);
+		mIsBound = true;
+	}
 	private class TrackThread extends Thread {
 
 		@Override

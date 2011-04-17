@@ -1,0 +1,11 @@
+<project name="openstreetmap" default="dist">
+	<description>
+		Ant build script for Titanium Android module OpenStreetMap
+	</description>
+
+	<property name="ti.module.root" location="${basedir}"/>
+	<property file="build.properties" />
+
+	<import file="${titanium.platform}/../module/android/build.xml"/>
+	<import file="./build.custom.xml" />
+</project>

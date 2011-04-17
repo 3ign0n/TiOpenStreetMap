@@ -40,7 +40,7 @@ public class OpenStreetMapRendererInfo {
 	URL_BUILDER_TYPE, // 0 - OSM, 1 - Google, 2 - Yandex, 3 - Yandex.Traffic, 4 - Google.Sattelite, 5 - openspace, 6 - microsoft, 8 - VFR Chart
 	TILE_SOURCE_TYPE, // 0 - internet, 3 - MapNav file, 4 - TAR, 5 - sqlitedb
 	YANDEX_TRAFFIC_ON,
-	PROJECTION; // 1-меркатор на сфероид, 2- на эллипсоид, 3- OSGB 36 British national grid reference system
+	PROJECTION; // 1-пїЅпїЅз‘ЈпїЅ пїЅ пїЅи¤ћпїЅпїЅ 2- пїЅ пїЅпїЅпїЅпїЅпїЅ 3- OSGB 36 British national grid reference system
 	public boolean LAYER;
 	private boolean mOnlineMapCacheEnabled;
 
@@ -207,6 +207,12 @@ public class OpenStreetMapRendererInfo {
 	}
 
 	public String getTileURLString(final int[] tileID, final int zoomLevel){
+		int i =0;
+		for (int id : tileID) {
+			android.util.Log.d("#####", "TILE_SOURCE_TYPE=" + TILE_SOURCE_TYPE + ", URL_BUILDER_TYPE=" + URL_BUILDER_TYPE + ", BASEURL=" +BASEURL+", titeID["+i+"]=" + id + ", zoomlevel=" + zoomLevel);
+			i++;
+		}
+		
 		final String strGalileo = new String("Galileo");
 		switch(this.TILE_SOURCE_TYPE){
 		case 0: // 0 - internet
