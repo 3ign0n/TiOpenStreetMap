@@ -6,7 +6,7 @@
  * Please see the LICENSE included with this distribution for details.
  *
  */
-package net.tiosmdroid;
+package net.tiosm;
 
 import org.appcelerator.kroll.KrollDict;
 import org.appcelerator.kroll.KrollProxy;
@@ -21,19 +21,18 @@ import org.appcelerator.titanium.view.TiCompositeLayout.LayoutArrangement;
 import org.appcelerator.titanium.view.TiUIView;
 
 import android.app.Activity;
-import org.osmdroid.views.MapView;
 
-// This proxy can be created by calling Tiosmdroid.createExample({message: "hello world"})
-@Kroll.proxy(creatableInModule=TiosmdroidModule.class)
-public class ExampleProxy extends TiViewProxy
+// This proxy can be created by calling Tiosm.createView({message: "hello world"})
+@Kroll.proxy(creatableInModule=TiosmModule.class)
+public class ViewProxy extends TiViewProxy
 {
 	// Standard Debugging variables
-	private static final String LCAT = "ExampleProxy";
+	private static final String LCAT = "ViewProxy";
 	private static final boolean DBG = TiConfig.LOGD;
 
-	private class ExampleView extends TiUIView
+	private class MapView extends TiUIView
 	{
-		public ExampleView(TiViewProxy proxy) {
+		public MapView(TiViewProxy proxy) {
 			super(proxy);
 			// LayoutArrangement arrangement = LayoutArrangement.DEFAULT;
 
@@ -59,7 +58,7 @@ public class ExampleProxy extends TiViewProxy
 
 
 	// Constructor
-	public ExampleProxy()
+	public ViewProxy()
 	{
 		super();
 	}
@@ -67,7 +66,7 @@ public class ExampleProxy extends TiViewProxy
 	@Override
 	public TiUIView createView(Activity activity)
 	{
-		TiUIView view = new ExampleView(this);
+		TiUIView view = new MapView(this);
 		view.getLayoutParams().autoFillsHeight = true;
 		view.getLayoutParams().autoFillsWidth = true;
 		return view;

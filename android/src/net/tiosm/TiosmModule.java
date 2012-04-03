@@ -6,7 +6,7 @@
  * Please see the LICENSE included with this distribution for details.
  *
  */
-package net.tiosmdroid;
+package net.tiosm;
 
 import org.appcelerator.kroll.KrollModule;
 import org.appcelerator.kroll.annotations.Kroll;
@@ -16,18 +16,18 @@ import org.appcelerator.kroll.common.Log;
 import org.appcelerator.kroll.common.TiConfig;
 
 
-@Kroll.module(name="Tiosmdroid", id="net.tiosmdroid")
-public class TiosmdroidModule extends KrollModule
+@Kroll.module(name="Tiosm", id="net.tiosm")
+public class TiosmModule extends KrollModule
 {
 
 	// Standard Debugging variables
-	private static final String LCAT = "TiosmdroidModule";
+	private static final String LCAT = "TiosmModule";
 	private static final boolean DBG = TiConfig.LOGD;
 
 	// You can define constants with @Kroll.constant, for example:
 	// @Kroll.constant public static final String EXTERNAL_NAME = value;
 	
-	public TiosmdroidModule()
+	public TiosmModule()
 	{
 		super();
 	}

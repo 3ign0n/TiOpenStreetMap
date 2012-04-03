@@ -16,3 +16,9 @@ How to build
 First of all, edit titanium platform, Android SDK and NDK paths in the build.properties to fit your environment.
 
 
+How to use
+--------------------
+To access this module from JavaScript, you would do the following:
+
+	var tiosm = require("net.tiosm");
+

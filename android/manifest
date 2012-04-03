@@ -4,15 +4,15 @@
 #
 version: 0.1
 apiversion: 2
-description: My module
-author: Your Name
-license: Specify your license
-copyright: Copyright (c) 2012 by Your Company
+description: Titanium open street map module for Android
+author: Takeda Hiroyuki (aka 3ign0n) <Take6a.Hir0yuki@gmail.com>
+license: The MIT license. see LICENSE file in detail
+copyright: Copyright (c) 2012 by Takeda Hiroyuki(aka 3ign0n) 
 
 
 # these should not be edited
-name: tiosmdroid
-moduleid: net.tiosmdroid
+name: tiosm
+moduleid: net.tiosm
 guid: 195718d1-c98b-4c5f-87f5-d9cb1d7cad58
 platform: android
 minsdk: 1.8.2

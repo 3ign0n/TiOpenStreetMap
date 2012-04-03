@@ -13,16 +13,16 @@ window.add(label);
 window.open();
 
 // TODO: write your module tests here
-var tiosmdroid = require('net.tiosmdroid');
-Ti.API.info("module is => " + tiosmdroid);
+var tiosm = require('net.tiosm');
+Ti.API.info("loading module => " + tiosm);
 
-label.text = tiosmdroid.example();
+label.text = tiosm.example();
 
-Ti.API.info("module exampleProp is => " + tiosmdroid.exampleProp);
-tiosmdroid.exampleProp = "This is a test value";
+Ti.API.info("module exampleProp is => " + tiosm.exampleProp);
+tiosm.exampleProp = "This is a test value";
 
 if (Ti.Platform.name == "android") {
-	var mapview = tiosmdroid.createExample({
+	var mapview = tiosm.createView({
 		message: "Creating an example Proxy",
 		backgroundColor: "red",
 		width: 200,

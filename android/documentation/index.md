@@ -1,16 +1,16 @@
-# tiosmdroid Module
+# tiosm Module
 
 ## Description
 
 TODO: Enter your module description here
 
-## Accessing the tiosmdroid Module
+## Accessing the tiosm Module
 
 To access this module from JavaScript, you would do the following:
 
-	var tiosmdroid = require("net.tiosmdroid");
+	var tiosm = require("net.tiosm");
 
-The tiosmdroid variable is a reference to the Module object.	
+The tiosm variable is a reference to the Module object.	
 
 ## Reference
 
