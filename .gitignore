@@ -1,7 +1,12 @@
 */tmp/**/*
 */bin/**/*
 */build/**/*
+*/dist/**/*
+*/libs/**/*
 *.zip
 **/.apt_generated
 .hg*
 .svn*
+.apt_generated
+build.log
+android/lib
