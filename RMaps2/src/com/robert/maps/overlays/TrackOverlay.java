@@ -9,7 +9,7 @@ import org.andnav.osm.views.OpenStreetMapView.OpenStreetMapViewProjection;
 import org.andnav.osm.views.overlay.OpenStreetMapViewOverlay;
 import org.andnav.osm.views.util.OpenStreetMapTileFilesystemProvider;
 
-import android.content.Context;
+import android.app.Activity;
 import android.graphics.Canvas;
 import android.graphics.Paint;
 import android.graphics.Path;
@@ -68,7 +68,7 @@ public class TrackOverlay extends OpenStreetMapViewOverlay {
 		}
 	}
 
-	public TrackOverlay(MainMapActivity mainMapActivity, PoiManager poiManager) {
+	public TrackOverlay(Activity mParentActivity, PoiManager poiManager) {
 		mTrack = null;
 		mPoiManager = poiManager;
 		mBaseCoords = new Point();
@@ -82,26 +82,9 @@ public class TrackOverlay extends OpenStreetMapViewOverlay {
 		mPaint.setAntiAlias(true);
 		mPaint.setStrokeWidth(4);
 		mPaint.setStyle(Paint.Style.STROKE);
-		mPaint.setColor(mainMapActivity.getResources().getColor(R.color.track));
+		mPaint.setColor(mParentActivity.getResources().getColor(R.color.track));
 	}
 
-	public TrackOverlay(Context context, PoiManager poiManager) {
-		mTrack = null;
-		mPoiManager = poiManager;
-		mBaseCoords = new Point();
-		mBaseLocation = new GeoPoint(0, 0);
-		mLastZoom = -1;
-		mThread = new TrackThread();
-		mThread.setName("Track thread");
-
-
-		mPaint = new Paint();
-		mPaint.setAntiAlias(true);
-		mPaint.setStrokeWidth(4);
-		mPaint.setStyle(Paint.Style.STROKE);
-//		mPaint.setColor(mainMapActivity.getResources().getColor(R.color.track));
-	}
-	
 	public void setStopDraw(boolean stopdraw){
 		mStopDraw = stopdraw;
 	}

@@ -57,32 +57,32 @@ public abstract class VersionedGestureDetector {
     private static class EclairDetector extends CupcakeDetector {
         @Override
         public boolean onTouchEvent(MotionEvent ev) {
-//            final int action = ev.getAction();
-//            switch (action & MotionEvent.ACTION_MASK) {
-//            case MotionEvent.ACTION_CANCEL:
-//            	mListener.onUp(ev);
-//               break;
-//    		case MotionEvent.ACTION_POINTER_DOWN:
-//    		case MotionEvent.ACTION_POINTER_2_DOWN:
-//             	mListener.onDown2(ev, ev.getX(ev.findPointerIndex(0)), ev.getY(ev.findPointerIndex(0)), ev.getX(ev.findPointerIndex(1)), ev.getY(ev.findPointerIndex(1)));
-//    			break;
-//    		case MotionEvent.ACTION_POINTER_UP:
-//    		case MotionEvent.ACTION_POINTER_2_UP:
-//    			mListener.onUp2(ev);
-//                break;
-//            case MotionEvent.ACTION_MOVE:
-//            	if(ev.getPointerCount()>1){
-//            		final int index0 = ev.findPointerIndex(0);
-//            		final int index1 = ev.findPointerIndex(1);
-//            		if(index0 == -1 || index1 == -1)
-//            			mListener.onMove(ev, 1, ev.getX(), ev.getY(), 0, 0);
-//            		else
-//            			mListener.onMove(ev, 2, ev.getX(ev.findPointerIndex(0)), ev.getY(ev.findPointerIndex(0)), ev.getX(ev.findPointerIndex(1)), ev.getY(ev.findPointerIndex(1)));
-//            	} else
-//            		mListener.onMove(ev, 1, ev.getX(), ev.getY(), 0, 0);
-//                break;
-//            }
-//
+            final int action = ev.getAction();
+            switch (action & MotionEvent.ACTION_MASK) {
+            case MotionEvent.ACTION_CANCEL:
+            	mListener.onUp(ev);
+               break;
+    		case MotionEvent.ACTION_POINTER_DOWN:
+    		case MotionEvent.ACTION_POINTER_2_DOWN:
+             	mListener.onDown2(ev, ev.getX(ev.findPointerIndex(0)), ev.getY(ev.findPointerIndex(0)), ev.getX(ev.findPointerIndex(1)), ev.getY(ev.findPointerIndex(1)));
+    			break;
+    		case MotionEvent.ACTION_POINTER_UP:
+    		case MotionEvent.ACTION_POINTER_2_UP:
+    			mListener.onUp2(ev);
+                break;
+            case MotionEvent.ACTION_MOVE:
+            	if(ev.getPointerCount()>1){
+            		final int index0 = ev.findPointerIndex(0);
+            		final int index1 = ev.findPointerIndex(1);
+            		if(index0 == -1 || index1 == -1)
+            			mListener.onMove(ev, 1, ev.getX(), ev.getY(), 0, 0);
+            		else
+            			mListener.onMove(ev, 2, ev.getX(ev.findPointerIndex(0)), ev.getY(ev.findPointerIndex(0)), ev.getX(ev.findPointerIndex(1)), ev.getY(ev.findPointerIndex(1)));
+            	} else
+            		mListener.onMove(ev, 1, ev.getX(), ev.getY(), 0, 0);
+                break;
+            }
+
             return super.onTouchEvent(ev);
         }
     }

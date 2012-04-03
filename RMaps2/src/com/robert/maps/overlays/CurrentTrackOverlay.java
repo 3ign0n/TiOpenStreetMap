@@ -10,6 +10,7 @@ import org.andnav.osm.views.OpenStreetMapView.OpenStreetMapViewProjection;
 import org.andnav.osm.views.overlay.OpenStreetMapViewOverlay;
 import org.andnav.osm.views.util.OpenStreetMapTileFilesystemProvider;
 
+import android.app.Activity;
 import android.content.ComponentName;
 import android.content.Context;
 import android.content.Intent;
@@ -51,9 +52,9 @@ public class CurrentTrackOverlay extends OpenStreetMapViewOverlay {
     IRemoteService mService = null;
     private boolean mIsBound;
 
-	public CurrentTrackOverlay(MainMapActivity mainMapActivity, PoiManager poiManager, OpenStreetMapView osmv) {
+	public CurrentTrackOverlay(Activity mParentActivity, PoiManager poiManager, OpenStreetMapView osmv) {
 		mTrack = new Track();
-		mContext = mainMapActivity;
+		mContext = mParentActivity;
 		//mPoiManager = poiManager;
 		mBaseCoords = new Point();
 		mBaseLocation = new GeoPoint(0, 0);
@@ -69,35 +70,12 @@ public class CurrentTrackOverlay extends OpenStreetMapViewOverlay {
 		mPaint.setAntiAlias(true);
 		mPaint.setStrokeWidth(4);
 		mPaint.setStyle(Paint.Style.STROKE);
-		mPaint.setColor(mainMapActivity.getResources().getColor(R.color.currenttrack));
+		mPaint.setColor(mParentActivity.getResources().getColor(R.color.currenttrack));
 
 		mContext.bindService(new Intent(IRemoteService.class.getName()), mConnection, 0 /*Context.BIND_AUTO_CREATE*/);
 		mIsBound = true;
 	}
 
-	public CurrentTrackOverlay(Context context, PoiManager poiManager, OpenStreetMapView osmv) {
-		mTrack = new Track();
-		mContext = context;
-		//mPoiManager = poiManager;
-		mBaseCoords = new Point();
-		mBaseLocation = new GeoPoint(0, 0);
-		mLastZoom = -1;
-		mBasePj = null;
-
-		mOsmv = osmv;
-		mThread = new TrackThread();
-		mThread.setName("Current Track thread");
-
-
-		mPaint = new Paint();
-		mPaint.setAntiAlias(true);
-		mPaint.setStrokeWidth(4);
-		mPaint.setStyle(Paint.Style.STROKE);
-//		mPaint.setColor(mainMapActivity.getResources().getColor(R.color.currenttrack));
-
-		mContext.bindService(new Intent(IRemoteService.class.getName()), mConnection, 0 /*Context.BIND_AUTO_CREATE*/);
-		mIsBound = true;
-	}
 	private class TrackThread extends Thread {
 
 		@Override

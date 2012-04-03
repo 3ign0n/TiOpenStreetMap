@@ -2,6 +2,7 @@ package org.andnav.osm.views.util;
 
 import java.lang.ref.SoftReference;
 import java.util.LinkedHashMap;
+import java.util.Map;
 
 import android.graphics.Bitmap;
 
@@ -29,7 +30,7 @@ public class LRUMapTileCache extends LinkedHashMap<String, SoftReference<Bitmap>
         }
 
         @Override
-        protected boolean removeEldestEntry(java.util.Map.Entry<String, SoftReference<Bitmap>> pEldest) {
+        protected boolean removeEldestEntry(Map.Entry<String, SoftReference<Bitmap>> pEldest) {
                 return size() > mCapacity;
         }
 
