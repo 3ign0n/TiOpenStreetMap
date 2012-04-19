@@ -17,32 +17,45 @@ import org.appcelerator.kroll.common.TiConfig;
 
 
 @Kroll.module(name="Tiosm", id="net.tiosm")
-public class TiosmModule extends KrollModule
-{
+public class TiosmModule extends KrollModule {
+	@Kroll.constant
+	public static final int OSMARENDER = 0;
+	@Kroll.constant
+    public static final int MAPNIK = 1; // this is default
+    @Kroll.constant
+    public static final int CYCLEMAP = 2;
+    @Kroll.constant
+    public static final int PUBLIC_TRANSPORT = 3;
+    @Kroll.constant
+    public static final int BASE = 4;
+	@Kroll.constant
+    public static final int TOPO = 5;
+    @Kroll.constant
+    public static final int HILLS = 6;
+	@Kroll.constant
+    public static final int CLOUDMADESTANDARDTILES = 7;
+    @Kroll.constant
+    public static final int CLOUDMADESMALLTILES = 8;
+    @Kroll.constant
+    public static final int MAPQUESTOSM = 9;
 
 	// Standard Debugging variables
 	private static final String LCAT = "TiosmModule";
 	private static final boolean DBG = TiConfig.LOGD;
 
-	// You can define constants with @Kroll.constant, for example:
-	// @Kroll.constant public static final String EXTERNAL_NAME = value;
-	
-	public TiosmModule()
-	{
+	public TiosmModule() {
 		super();
 	}
 
 	@Kroll.onAppCreate
-	public static void onAppCreate(TiApplication app)
-	{
+	public static void onAppCreate(TiApplication app) {
 		Log.d(LCAT, "inside onAppCreate");
 		// put module init code that needs to run when the application is created
 	}
 
 	// Methods
 	@Kroll.method
-	public String example()
-	{
+	public String example() {
 		Log.d(LCAT, "example called");
 		return "hello world";
 	}

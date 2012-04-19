@@ -9,97 +9,65 @@
 package net.tiosm;
 
 import org.appcelerator.kroll.KrollDict;
-import org.appcelerator.kroll.KrollProxy;
 import org.appcelerator.kroll.annotations.Kroll;
 import org.appcelerator.titanium.TiC;
-import org.appcelerator.titanium.util.Log;
-import org.appcelerator.titanium.util.TiConfig;
-import org.appcelerator.titanium.util.TiConvert;
 import org.appcelerator.titanium.proxy.TiViewProxy;
-import org.appcelerator.titanium.view.TiCompositeLayout;
-import org.appcelerator.titanium.view.TiCompositeLayout.LayoutArrangement;
+import org.appcelerator.titanium.util.TiConfig;
+import org.appcelerator.titanium.util.Log;
 import org.appcelerator.titanium.view.TiUIView;
 
 import android.app.Activity;
 
-// This proxy can be created by calling Tiosm.createView({message: "hello world"})
+// This proxy can be created by calling Tiosm.createView({})
 @Kroll.proxy(creatableInModule=TiosmModule.class)
-public class ViewProxy extends TiViewProxy
-{
+public class ViewProxy extends TiViewProxy {
 	// Standard Debugging variables
-	private static final String LCAT = "ViewProxy";
+	private static final String LCAT = "TiOsmModule/ViewProxy";
 	private static final boolean DBG = TiConfig.LOGD;
 
-	private class MapView extends TiUIView
-	{
-		public MapView(TiViewProxy proxy) {
-			super(proxy);
-			// LayoutArrangement arrangement = LayoutArrangement.DEFAULT;
-
-			// if (proxy.hasProperty(TiC.PROPERTY_LAYOUT)) {
-			// 	String layoutProperty = TiConvert.toString(proxy.getProperty(TiC.PROPERTY_LAYOUT));
-			// 	if (layoutProperty.equals(TiC.LAYOUT_HORIZONTAL)) {
-			// 		arrangement = LayoutArrangement.HORIZONTAL;
-			// 	} else if (layoutProperty.equals(TiC.LAYOUT_VERTICAL)) {
-			// 		arrangement = LayoutArrangement.VERTICAL;
-			// 	}
-			// }
-			// setNativeView(new TiCompositeLayout(proxy.getActivity(), arrangement));
-			org.osmdroid.views.MapView mapView = new org.osmdroid.views.MapView(proxy.getActivity(), 50);
-			setNativeView(mapView);
-		}
-
-		@Override
-		public void processProperties(KrollDict d)
-		{
-			super.processProperties(d);
-		}
-	}
-
+	private MapView view;
+	private KrollDict location;
+	private int zoomLevel = -1;
 
 	// Constructor
-	public ViewProxy()
-	{
+	public ViewProxy() {
 		super();
 	}
 
 	@Override
-	public TiUIView createView(Activity activity)
-	{
-		TiUIView view = new MapView(this);
+	public TiUIView createView(Activity activity) {
+		view = new MapView(this);
 		view.getLayoutParams().autoFillsHeight = true;
 		view.getLayoutParams().autoFillsWidth = true;
+
+	 	if (zoomLevel > 0) {
+	 		view.changeZoomLevel(zoomLevel);
+	 	}
+
 		return view;
 	}
 
-	// Handle creation options
-	@Override
-	public void handleCreationDict(KrollDict options)
-	{
-		super.handleCreationDict(options);
-		
-		if (options.containsKey("message")) {
-			Log.d(LCAT, "example created with message: " + options.get("message"));
-		}
-	}
-	
 	// Methods
 	@Kroll.method
-	public void printMessage(String message)
-	{
-		Log.d(LCAT, "printing message: " + message);
+	public void zoom(int delta) {
+		if (view != null) {
+			view.changeZoomLevel(delta);
+		} else {
+			zoomLevel = delta;
+		}
 	}
 
-
-	@Kroll.getProperty @Kroll.method
-	public String getMessage()
-	{
-        return "Hello World from my module";
+	@Kroll.method
+	public void setLocation(KrollDict location)	{
+		if(view == null) {
+			this.location = location;
+		} else {
+			view.doSetLocation(location);
+		}
 	}
 
-	@Kroll.setProperty @Kroll.method
-	public void setMessage(String message)
-	{
-	    Log.d(LCAT, "Tried setting module message to: " + message);
+	@Kroll.method
+	public void setMapType(int mapType) {
+		this.setProperty(TiC.PROPERTY_MAP_TYPE, mapType, true);
 	}
 }
